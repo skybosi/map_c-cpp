@@ -1,0 +1,12 @@
+#ifndef MAP_PROGRAM
+#define MAP_PROGRAM
+#include<stdio.h>
+static int deep = 0;
+inline void deep_fun(int deep2);
+#define P_func printf("\033[1;31m%s\n\033[0m",__func__);
+#define P_LINE printf("\033[1;31m%s\033[0m",__LINE__);
+#define P_FILE printf("%d",__FILE__);
+#define pMAP_P {int deep2 = deep; deep_fun(deep2); P_func; deep++;}
+#define vMAP_P {deep--;}
+#endif
+
